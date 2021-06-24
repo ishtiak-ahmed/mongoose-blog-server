@@ -30,4 +30,4 @@ mongoose.connect(DB, {
     console.log('DB connected succesfully')
 }).catch(err => console.log("Error : ", err))
 
-app.listen(3002, console.log('Server is running in port 3002.'))
+app.listen(1717, console.log('Server is running in port 1717.'))
