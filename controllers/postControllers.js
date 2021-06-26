@@ -33,9 +33,9 @@ exports.addNewPost = async (req, res) => {
 }
 
 exports.deletePost = async (req,res) => {
-    const id = req.body;
-    console.log(id)
-    res.send(`Post with this id will be deleted- ` )
+    const id = req.params.id;
+    await Post.findByIdAndDelete(id)
+    res.status(304).json({status: 'success', message: 'deleted succesfully'})
 }
 
 exports.updatePost = async (req, res) => {
