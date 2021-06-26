@@ -15,3 +15,13 @@ exports.getPostComment = async (req, res) => {
         res.status(300).json({data: {comments: []}})
     }
 }
+
+exports.deleteComment = async (req, res) => {
+    const id = req.params.id;
+    try {
+        await Comment.findByIdAndDelete(id);
+        res.status(304).json({status: 'success', message: 'Comment deleted successfully.'})
+    }catch(err){
+        res.status(400).json({status: 'fail', message: 'Something went wrong'})
+    }
+}
