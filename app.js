@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 const cors = require('cors')
 const app = express();
+
+// Using Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
@@ -30,4 +32,4 @@ mongoose.connect(DB, {
     console.log('DB connected succesfully')
 }).catch(err => console.log("Error : ", err))
 
-app.listen(1717, console.log('Server is running in port 1717.'))
+app.listen(process.env.PORT || 1717, console.log('Server is running in port 1717.'))
