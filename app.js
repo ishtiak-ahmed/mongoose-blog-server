@@ -17,7 +17,7 @@ app.use('/auth', authRouter);
 app.use('/post', postRouter);
 app.use('/comment', commentRouter);
 
-app.get('/api/ping', (req, res) => {
+app.get('/ping', (req, res) => {
     res.status(200).send('Server and all is well.')
 })
 
